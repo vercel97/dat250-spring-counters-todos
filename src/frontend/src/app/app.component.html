@@ -1,0 +1,24 @@
+<h1>Todos</h1>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Description</th>
+    <th>Summary</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let todo of todos">
+    <td>{{ todo.id }}</td>
+    <td>{{ todo.description }}</td>
+    <td>{{ todo.summary }}</td>
+    <td>
+      <button *ngIf="todo.id" (click)="deleteTodo(todo.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+<button (click)="loadTodos()">Refresh</button>
+<h2>Todo</h2>
+<label for="desc">Description:</label><br>
+<input type="text" id="desc" name="desc" [(ngModel)]="newTodo.description"><br>
+<label for="sum">Summary:</label><br>
+<input type="text" id="sum" name="sum" [(ngModel)]="newTodo.summary"><br>
+<button (click)="addTodo()">Add</button>

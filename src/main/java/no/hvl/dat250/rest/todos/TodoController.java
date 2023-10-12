@@ -3,6 +3,7 @@ package no.hvl.dat250.rest.todos;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -10,6 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/todos")
+@CrossOrigin(origins = "http://localhost:4200")  // Accept requests from Angular-app
 public class TodoController {
 
   public static final String TODO_WITH_THE_ID_X_NOT_FOUND = "Todo with the id %s not found!";
